@@ -6,25 +6,25 @@ test('The string HELLO should return true', () => {
 })
 
 test('The string COMO ESTAS should return true', () => {
-    const result = isUpperCase('como ESTAS');
-    expect(result).toBe(true);
+    const result = isUpperCase('comoESTAS');
+    expect(result).toBe(false);
 })
 test('The string ADIOS should return true', () => {
     const result = isUpperCase('AdioS');
-    expect(result).toBe(true);
+    expect(result).toBe(false);
 
 })
 
 describe('calculator', () => {
     test.each`
-      firstValue | secondValue | expectedResult    
-      ${HELLO}       | ${HELLO}        | ${HELLO}
-      ${COMOESTAS}      | ${comoESTAS} | ${COMOESTAS}
-      ${ADIOS}      | ${AdioS}         | ${ADIOS}
+      firstValue | expectedResult    
+      ${'HELLO'}           | ${true}
+      ${'COMOESTAS'}       | ${true}
+      ${'AdioS'}           | ${false}
    
 
-    `('$firstValue + $secondValue should return $expectedResult', ({firstValue, secondValue, expectedResult}) => {
-      expect(sum(firstValue, secondValue)).toBe(expectedResult);
+    `('$firstValue + should return $expectedResult', ({firstValue, expectedResult}) => {
+      expect(isUpperCase(firstValue)).toBe(expectedResult);
     });
   });
 

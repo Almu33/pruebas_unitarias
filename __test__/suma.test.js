@@ -9,8 +9,8 @@ test("sumar 3+4 igual a 7", () => {
     expect(sum(3,4)).toBe(7)
 
 })
-    test("sumar 18+45 igual a 65", () => {
-        expect(sum(18,45)).toBe(65)
+    test("sumar 18+45 igual a 63", () => {
+        expect(sum(18,45)).toBe(63)
 })
 
 

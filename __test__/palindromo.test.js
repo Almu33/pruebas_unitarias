@@ -3,10 +3,10 @@ const palindromo = require('../utils/palindromo.js')
 test ('palindromo de fran', () => {
     const result = palindromo('fran')
     expect(result).toBe('narf')
-
+  })
     test ('palindromo de almu', () => {
         const result = palindromo('almu')
-        expect(result).toBe('ulma')
+        expect(result).toBe('umla')
     })
 
     test ('palindromo de marga', () => {
@@ -16,18 +16,15 @@ test ('palindromo de fran', () => {
 
     test ('palindromo de jaime', () => {
         const result = palindromo('jaime')
-        expect(result).toBe('emjai')
+        expect(result).toBe('emiaj')
     })
-    describe('calculator', () => {
-        test.each`
-          firstValue | secondValue | expectedResult    
-          ${fran}       | ${narf}        | ${narf}
-          ${almu}      | ${ulma}         | ${ulma}
-          ${marga}      | ${agram}       | ${agram}
-          ${jaime}}      | ${emjai}       | ${emiaj}
-    
-        `('$firstValue + $secondValue should return $expectedResult', ({firstValue, secondValue, expectedResult}) => {
-          expect(sum(firstValue, secondValue)).toBe(expectedResult);
-        });
+    describe('palindromo', () => {
+      test.each`
+        string        | expectedResult    
+        ${'roma'}       | ${'amor'}
+        ${'ojo'}        | ${'ojo'}
+        ${'rata'}       | ${'atar'}
+      `('$string should return $expectedResult', ({string, expectedResult}) => {
+        expect(palindromo (string)).toBe(expectedResult);
       });
     });
